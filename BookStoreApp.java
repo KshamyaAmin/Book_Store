@@ -101,7 +101,7 @@ class Book {
 
     @Override
     public String toString() {
-        return id + " - " + name + " ($" + String.format("%.2f", price) + ")";
+        return id + " - " + name + " (Rs. " + String.format("%.2f", price) + ")";
     }
 }
 
@@ -255,7 +255,7 @@ class BookEntryForm {
         selectionPanel.add(imagePanel, BorderLayout.WEST);
         selectionPanel.add(fieldsPanel, BorderLayout.CENTER);
 
-        cartTotalLabel = new JLabel("Cart Total: $0.00");
+        cartTotalLabel = new JLabel("Cart Total: Rs. 0.00");
         cartTotalLabel.setFont(new Font("SansSerif", Font.BOLD, 18));
         cartTotalLabel.setForeground(new Color(10, 90, 55));
         cartTotalLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -330,7 +330,7 @@ class BookEntryForm {
     private void populateSelectedBook(Book book) {
         bookIdField.setText(book.id);
         bookNameField.setText(book.name);
-        amountField.setText(String.format("%.2f", book.price));
+        amountField.setText(String.format("Rs. %.2f", book.price));
         discountField.setText("0");
         ImageIcon icon = getScaledImageIcon(book.imagePath, 220, 220);
         if (icon != null) {
@@ -358,7 +358,7 @@ class BookEntryForm {
                 throw new NumberFormatException();
             }
             double finalPrice = selectedBook.price - (selectedBook.price * discount / 100);
-            String cartItem = String.format("%s | %s | $%.2f | %.0f%% => $%.2f",
+            String cartItem = String.format("%s | %s | Rs. %.2f | %.0f%% => Rs. %.2f",
                     selectedBook.id,
                     selectedBook.name,
                     selectedBook.price,
@@ -376,7 +376,7 @@ class BookEntryForm {
     }
 
     private void updateCartTotal() {
-        cartTotalLabel.setText(String.format("Cart Total: $%.2f", cartTotal));
+        cartTotalLabel.setText(String.format("Cart Total: Rs. %.2f", cartTotal));
     }
 
     private ImageIcon getScaledImageIcon(String path, int width, int height) {
@@ -406,7 +406,7 @@ class BookEntryForm {
             double discountedPrice = amount - (amount * discount / 100);
 
             JOptionPane.showMessageDialog(frame,
-                    String.format("Discounted Price: $%.2f", discountedPrice),
+                    String.format("Discounted Price: Rs. %.2f", discountedPrice),
                     "Price Conversion",
                     JOptionPane.INFORMATION_MESSAGE);
         } catch (NumberFormatException e) {
@@ -445,7 +445,7 @@ class BookEntryForm {
         for (int i = 0; i < cartModel.getSize(); i++) {
             billBuilder.append(cartModel.get(i)).append("\n");
         }
-        billBuilder.append("\nTotal Payable: ").append(String.format("$%.2f", cartTotal));
+        billBuilder.append("\nTotal Payable: ").append(String.format("Rs. %.2f", cartTotal));
 
         new BillDisplayFrame(billBuilder.toString());
         frame.dispose();

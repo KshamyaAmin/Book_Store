@@ -28,18 +28,6 @@ A colorful, feature-rich Java Swing desktop application for a student bookstore 
 - Semi-transparent panels for better visibility
 - Color-coded action buttons
 
-## Book Catalog (Pre-loaded)
-
-1. B101 - Java Programming (Rs. 450.00)
-2. B102 - Data Structures (Rs. 320.00)
-3. B103 - Web Design Basics (Rs. 275.50)
-4. B104 - Database Systems (Rs. 390.00)
-5. B105 - Algorithms in Java (Rs. 510.75)
-6. B106 - Python for Beginners (Rs. 295.00)
-7. B107 - Machine Learning (Rs. 625.00)
-8. B108 - English Grammar (Rs. 185.00)
-9. B109 - Physics Fundamentals (Rs. 345.50)
-10. B110 - Chemistry Concepts (Rs. 330.00)
 
 ## System Requirements
 
